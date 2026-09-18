@@ -1,0 +1,67 @@
+<header class="border-b border-slate-200 bg-white">
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between
+           gap-6 px-4 py-4 sm:px-6 lg:px-8"
+  >
+    <!-- Brand -->
+    <a
+      routerLink="/cases"
+      class="text-lg font-semibold tracking-tight text-slate-900
+             transition hover:text-slate-700"
+    >
+      Dan Bufete
+    </a>
+
+    <!-- Navigation -->
+    <nav class="flex items-center gap-1">
+      <a
+        routerLink="/cases"
+        routerLinkActive="bg-slate-100 text-slate-900"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="rounded-md px-3 py-2 text-sm font-medium text-slate-600
+               transition hover:bg-slate-50 hover:text-slate-900"
+      >
+        {{ t().navigation.cases }}
+      </a>
+
+      <a
+        routerLink="/cases"
+        class="rounded-md px-3 py-2 text-sm font-medium text-slate-600
+               transition hover:bg-slate-50 hover:text-slate-900"
+      >
+        {{ t().navigation.documents }}
+      </a>
+    </nav>
+
+    <!-- Language selector -->
+    <div
+      class="flex rounded-lg border border-slate-200 bg-slate-50 p-1"
+      role="group"
+      aria-label="Language"
+    >
+      <button
+        type="button"
+        [class.bg-white]="language() === 'es'"
+        [class.text-slate-900]="language() === 'es'"
+        [class.shadow-sm]="language() === 'es'"
+        [class.text-slate-500]="language() !== 'es'"
+        (click)="setLanguage('es')"
+        class="rounded-md px-3 py-1.5 text-xs font-medium transition"
+      >
+        Español
+      </button>
+
+      <button
+        type="button"
+        [class.bg-white]="language() === 'en'"
+        [class.text-slate-900]="language() === 'en'"
+        [class.shadow-sm]="language() === 'en'"
+        [class.text-slate-500]="language() !== 'en'"
+        (click)="setLanguage('en')"
+        class="rounded-md px-3 py-1.5 text-xs font-medium transition"
+      >
+        English
+      </button>
+    </div>
+  </div>
+</header>
