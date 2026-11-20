@@ -152,7 +152,7 @@
          hover:text-slate-900">
                                     {{ t().common.view }}
                                 </a>
-                                <a [routerLink]="['/cases', caseItem.id, 'edit']" class="rounded-md px-3 py-1.5 text-sm font-medium
+                                <a [routerLink]="['/cases', caseItem.id, 'edit']" [queryParams]="{ returnTo: 'list' }" class="rounded-md px-3 py-1.5 text-sm font-medium
          text-slate-600 transition hover:bg-slate-100
          hover:text-slate-900">
                                     {{ t().common.edit }}
